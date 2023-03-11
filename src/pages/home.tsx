@@ -40,8 +40,11 @@ const home = () => {
           series={[75, 25]}
           colors={['#a76be8', '#e4e8ef']}
         />
-
       </Box>
+      <Stack mt="25px" width="100%" direction={{xs:'column', lg:'row'}}>
+        <TotalRevenue/>
+        <PropertyReferrals />
+      </Stack>
     </Box>
   )
 }
