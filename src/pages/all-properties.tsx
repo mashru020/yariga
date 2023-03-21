@@ -11,10 +11,14 @@ const AllProperties = () => {
   const navigate = useNavigate();
   const {
     tableQueryResult: { data, isLoading, isError },
-    current,setCurrent,
-    pageCount,setPageSize,
-    sorter, setSorter,
-    filters, setFilters, 
+    current,
+    setCurrent,
+    pageCount,
+    setPageSize,
+    sorter, 
+    setSorter,
+    filters, 
+    setFilters, 
   } = useTable();
 
   const allProperties = data?.data ?? [];
@@ -129,8 +133,8 @@ const AllProperties = () => {
             Page{' '}<strong>{current} of {pageCount}</strong> 
           </Box>
           <CustomButton 
-            title="next"
-            handleClick={()=>{setCurrent((next)=> next + 1)}}
+            title="Next"
+            handleClick={()=>{setCurrent((prev)=> prev + 1)}}
             backgroundColor="#475be8"
             color='#fcfcfc'
             disabled={current === pageCount}
@@ -142,8 +146,7 @@ const AllProperties = () => {
             required
             inputProps={{'aria-label': 'Without label'}}
             defaultValue={10}
-            value=''
-            onChange={()=> {}}
+            onChange={(e)=> setPageSize(e.target.value? Number(e.target.value) :  10)}
           >
             {[10, 20, 30, 40, 50].map((size)=> (
               <MenuItem key={size} value={size}>Show {size}</MenuItem>
