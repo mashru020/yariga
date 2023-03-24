@@ -13,14 +13,14 @@ const AllProperties = () => {
     tableQueryResult: { data, isLoading, isError },
     current,
     setCurrent,
-    pageCount,
+    pageSize,
     setPageSize,
+    pageCount,
     sorter, 
     setSorter,
     filters, 
     setFilters, 
   } = useTable();
-
   const allProperties = data?.data ?? [];
 
   // =====================  sort by price start ========================
