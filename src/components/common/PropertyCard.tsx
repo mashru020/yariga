@@ -17,7 +17,6 @@ const PropertyCard = ({id, title, location, price, photo}: PropertyCardProps ) =
           boxShadow: '0 22px 45px 2px rrgba(176, 176, 176,0.1)'
         },
         cursor:'pointer',
-        textDecoration:'none',
       }}
       elevation={0}
     >
